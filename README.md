@@ -4,6 +4,6 @@
 ## Технологии
  - **C#**
  - **.NET Framework**
- -**MS SQL**
+ - **MS SQL**
  
 ![hippo](https://media.giphy.com/media/7nGiT7GhzqCGuBfWPZ/giphy.gif)
