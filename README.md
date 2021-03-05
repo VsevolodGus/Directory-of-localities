@@ -6,4 +6,4 @@
  - **.NET Framework**
  -**MS SQL**
  
-![hippo](https://media.giphy.com/media/rM6VaxnwrTYgaZELFJ/giphy.gif)
+![hippo](https://media.giphy.com/media/7nGiT7GhzqCGuBfWPZ/giphy.gif)
