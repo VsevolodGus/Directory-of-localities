@@ -112,7 +112,7 @@ namespace Справочник
                 command.Parameters.AddWithValue("Title", textBox.Text);// добавляем название    
                 command.Parameters.AddWithValue(Column, listBox.SelectedValue);// считывание Value
                 textBox.Text = string.Empty;
-                MessageBox.Show(command.ExecuteNonQuery().ToString());
+               command.ExecuteNonQuery();
                 listBox1.DataSource = WildcardFiles(Table);
                 CheckSelectedOldPlace();
             }
@@ -126,7 +126,7 @@ namespace Справочник
                 SqlCommand command = new SqlCommand("INSERT INTO [Country] (Title) VALUES (@Title)", SqlData);
                 command.Parameters.AddWithValue("Title", InputCountry.Text);// добавляем название страны
                 InputCountry.Text = string.Empty;
-                MessageBox.Show(command.ExecuteNonQuery().ToString());
+                command.ExecuteNonQuery();
                 ListCountry.DataSource = WildcardFiles("Country");
                 CheckSelectedOldPlace();
             }
@@ -170,7 +170,7 @@ namespace Справочник
                     command.Parameters.AddWithValue("DistricT", ListDistrict.SelectedValue);// принадлежит району 
                     command.Parameters.AddWithValue("Type", Choice_Type.SelectedItem);// выбираем тип населенного пункта 
                     InputSettlement.Text = string.Empty;
-                    MessageBox.Show(command.ExecuteNonQuery().ToString());
+                    command.ExecuteNonQuery();
                     if (Choice_Type.Text != "все")
                         ListSettlement.DataSource = ChangeSelectedType("Settlement", "DistricT", ListDistrict.SelectedValue.ToString(), Choice_Type.Text);
                     else
@@ -185,13 +185,14 @@ namespace Справочник
         /////////////
         /// удаление элементов в LISTBOX-ов
         ////////////
-        private void Delete_All(ListBox listBox, string Table)
+        private void Delete_All(ListBox listBox, string Table,string Name)
         {
+            MessageBox.Show("Удален из "+ Name + " элемент - " + listBox.SelectedValue);
             /// находим элементы в БЗ с таким же название и удаляем 
             SqlCommand command = new SqlCommand($"DELETE FROM {Table} WHERE Title =@Title", SqlData);
             //  после 1-ого использования соединение listbox с БЗ прерывается и нужно считывать уже по Items
             command.Parameters.AddWithValue("Title", listBox.SelectedValue);// считываем значение         
-            MessageBox.Show(command.ExecuteNonQuery().ToString());
+            command.ExecuteNonQuery();
             listBox.DataSource = WildcardFiles(Table);
             CheckSelectedOldPlace();
         }
@@ -200,23 +201,23 @@ namespace Справочник
         //////////
         private void DeleteCountry_Click(object sender, EventArgs e)
         {
-            Delete_All(ListCountry, "Country");
+            Delete_All(ListCountry, "Country", "Страны");
         }
         private void DeleteArea_Click(object sender, EventArgs e)
         {
-            Delete_All(ListArea, "Area");
+            Delete_All(ListArea, "Area","Области");
             ListArea.DataSource = ChangeSelected(
                                               "Area", "CountrY", ListCountry.SelectedValue.ToString());
         }
         private void DeleteDistrict_Click(object sender, EventArgs e)
         {
-            Delete_All(ListDistrict, "District");
+            Delete_All(ListDistrict, "District", "Районы");
             ListDistrict.DataSource = ChangeSelected(
                                                       "District", "AreA", ListArea.SelectedValue.ToString());
         }
         private void DeleteSettlement_Click(object sender, EventArgs e)
         {
-            Delete_All(ListSettlement, "Settlement");
+            Delete_All(ListSettlement, "Settlement", "Насленные пукнты");
             if (Choice_Type.Text == "все")
                 ListSettlement.DataSource = ChangeSelected(
                                        "Settlement", "DistricT", ListDistrict.SelectedValue.ToString());
