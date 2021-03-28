@@ -69,26 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Список_населенных_пунктовDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Список_населенных_пунктовDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Список_населенных_пунктовDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Список_населенных_пунктовDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Список_населенных_пунктовDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Список_населенных_пунктовDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Список_населенных_пунктовDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Список_населенных_пунктовDataSet3.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,62 +90,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Список_населенных_пунктовDataSet.xsc">
-      <DependentUpon>Список_населенных_пунктовDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Список_населенных_пунктовDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet.xss">
-      <DependentUpon>Список_населенных_пунктовDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet1.xsc">
-      <DependentUpon>Список_населенных_пунктовDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Список_населенных_пунктовDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet1.xss">
-      <DependentUpon>Список_населенных_пунктовDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet2.xsc">
-      <DependentUpon>Список_населенных_пунктовDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Список_населенных_пунктовDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet2.xss">
-      <DependentUpon>Список_населенных_пунктовDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet3.xsc">
-      <DependentUpon>Список_населенных_пунктовDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Список_населенных_пунктовDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Список_населенных_пунктовDataSet3.xss">
-      <DependentUpon>Список_населенных_пунктовDataSet3.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Список_населенных_пунктов.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Список_населенных_пунктов_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Список_населенных_пунктов.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
