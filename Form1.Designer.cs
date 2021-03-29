@@ -33,10 +33,10 @@ namespace Справочник
             this.ListCountry = new System.Windows.Forms.ListBox();
             this.InputCountry = new System.Windows.Forms.TextBox();
             this.DeleteCountry = new System.Windows.Forms.Button();
-            this.DeleteArea = new System.Windows.Forms.Button();
-            this.InputArea = new System.Windows.Forms.TextBox();
-            this.ListArea = new System.Windows.Forms.ListBox();
-            this.AddArea = new System.Windows.Forms.Button();
+            this.DeleteState = new System.Windows.Forms.Button();
+            this.InputState = new System.Windows.Forms.TextBox();
+            this.ListState = new System.Windows.Forms.ListBox();
+            this.AddState = new System.Windows.Forms.Button();
             this.DeleteDistrict = new System.Windows.Forms.Button();
             this.InputDistrict = new System.Windows.Forms.TextBox();
             this.ListDistrict = new System.Windows.Forms.ListBox();
@@ -61,6 +61,7 @@ namespace Справочник
             this.AddCountry.TabIndex = 0;
             this.AddCountry.Text = "Добавить";
             this.AddCountry.UseVisualStyleBackColor = true;
+            this.AddCountry.Click += new System.EventHandler(this.AddCountry_Click);
             // 
             // ListCountry
             // 
@@ -72,7 +73,8 @@ namespace Справочник
             this.ListCountry.Name = "ListCountry";
             this.ListCountry.Size = new System.Drawing.Size(229, 420);
             this.ListCountry.TabIndex = 2;
-            this.ListCountry.ValueMember = "Title";
+            this.ListCountry.Tag = "dfafas";
+            this.ListCountry.ValueMember = "Id";
             // 
             // InputCountry
             // 
@@ -91,46 +93,48 @@ namespace Справочник
             this.DeleteCountry.TabIndex = 5;
             this.DeleteCountry.Text = "Удалить";
             this.DeleteCountry.UseVisualStyleBackColor = true;
+            this.DeleteCountry.Click += new System.EventHandler(this.DeleteCountry_Click);
             // 
-            // DeleteArea
+            // DeleteState
             // 
-            this.DeleteArea.Location = new System.Drawing.Point(413, 527);
-            this.DeleteArea.Margin = new System.Windows.Forms.Padding(4);
-            this.DeleteArea.Name = "DeleteArea";
-            this.DeleteArea.Size = new System.Drawing.Size(105, 37);
-            this.DeleteArea.TabIndex = 9;
-            this.DeleteArea.Text = "Удалить";
-            this.DeleteArea.UseVisualStyleBackColor = true;
+            this.DeleteState.Location = new System.Drawing.Point(413, 527);
+            this.DeleteState.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteState.Name = "DeleteState";
+            this.DeleteState.Size = new System.Drawing.Size(105, 37);
+            this.DeleteState.TabIndex = 9;
+            this.DeleteState.Text = "Удалить";
+            this.DeleteState.UseVisualStyleBackColor = true;
             // 
-            // InputArea
+            // InputState
             // 
-            this.InputArea.Location = new System.Drawing.Point(300, 495);
-            this.InputArea.Margin = new System.Windows.Forms.Padding(4);
-            this.InputArea.Name = "InputArea";
-            this.InputArea.Size = new System.Drawing.Size(201, 22);
-            this.InputArea.TabIndex = 8;
+            this.InputState.Location = new System.Drawing.Point(300, 495);
+            this.InputState.Margin = new System.Windows.Forms.Padding(4);
+            this.InputState.Name = "InputState";
+            this.InputState.Size = new System.Drawing.Size(201, 22);
+            this.InputState.TabIndex = 8;
             // 
-            // ListArea
+            // ListState
             // 
-            this.ListArea.DisplayMember = "Title";
-            this.ListArea.FormattingEnabled = true;
-            this.ListArea.ItemHeight = 16;
-            this.ListArea.Location = new System.Drawing.Point(288, 68);
-            this.ListArea.Margin = new System.Windows.Forms.Padding(4);
-            this.ListArea.Name = "ListArea";
-            this.ListArea.Size = new System.Drawing.Size(229, 420);
-            this.ListArea.TabIndex = 7;
-            this.ListArea.ValueMember = "Title";
+            this.ListState.DisplayMember = "Title";
+            this.ListState.FormattingEnabled = true;
+            this.ListState.ItemHeight = 16;
+            this.ListState.Location = new System.Drawing.Point(288, 68);
+            this.ListState.Margin = new System.Windows.Forms.Padding(4);
+            this.ListState.Name = "ListState";
+            this.ListState.Size = new System.Drawing.Size(229, 420);
+            this.ListState.TabIndex = 7;
+            this.ListState.ValueMember = "Title";
             // 
-            // AddArea
+            // AddState
             // 
-            this.AddArea.Location = new System.Drawing.Point(288, 527);
-            this.AddArea.Margin = new System.Windows.Forms.Padding(4);
-            this.AddArea.Name = "AddArea";
-            this.AddArea.Size = new System.Drawing.Size(105, 37);
-            this.AddArea.TabIndex = 6;
-            this.AddArea.Text = "Добавить";
-            this.AddArea.UseVisualStyleBackColor = true;
+            this.AddState.Location = new System.Drawing.Point(288, 527);
+            this.AddState.Margin = new System.Windows.Forms.Padding(4);
+            this.AddState.Name = "AddState";
+            this.AddState.Size = new System.Drawing.Size(105, 37);
+            this.AddState.TabIndex = 6;
+            this.AddState.Text = "Добавить";
+            this.AddState.UseVisualStyleBackColor = true;
+            this.AddState.Click += new System.EventHandler(this.AddState_Click);
             // 
             // DeleteDistrict
             // 
@@ -171,6 +175,7 @@ namespace Справочник
             this.AddDistrict.TabIndex = 10;
             this.AddDistrict.Text = "Добавить";
             this.AddDistrict.UseVisualStyleBackColor = true;
+            this.AddDistrict.Click += new System.EventHandler(this.AddDistrict_Click);
             // 
             // DeleteSettlement
             // 
@@ -211,6 +216,7 @@ namespace Справочник
             this.AddSettlement.TabIndex = 14;
             this.AddSettlement.Text = "Добавить";
             this.AddSettlement.UseVisualStyleBackColor = true;
+            this.AddSettlement.Click += new System.EventHandler(this.AddSettlement_Click);
             // 
             // Choice_Type
             // 
@@ -290,10 +296,10 @@ namespace Справочник
             this.Controls.Add(this.InputDistrict);
             this.Controls.Add(this.ListDistrict);
             this.Controls.Add(this.AddDistrict);
-            this.Controls.Add(this.DeleteArea);
-            this.Controls.Add(this.InputArea);
-            this.Controls.Add(this.ListArea);
-            this.Controls.Add(this.AddArea);
+            this.Controls.Add(this.DeleteState);
+            this.Controls.Add(this.InputState);
+            this.Controls.Add(this.ListState);
+            this.Controls.Add(this.AddState);
             this.Controls.Add(this.DeleteCountry);
             this.Controls.Add(this.InputCountry);
             this.Controls.Add(this.ListCountry);
@@ -301,6 +307,7 @@ namespace Справочник
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Справочник";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,10 +319,10 @@ namespace Справочник
         private System.Windows.Forms.ListBox ListCountry;
         private System.Windows.Forms.TextBox InputCountry;
         private System.Windows.Forms.Button DeleteCountry;
-        private System.Windows.Forms.Button DeleteArea;
-        private System.Windows.Forms.TextBox InputArea;
-        private System.Windows.Forms.ListBox ListArea;
-        private System.Windows.Forms.Button AddArea;
+        private System.Windows.Forms.Button DeleteState;
+        private System.Windows.Forms.TextBox InputState;
+        private System.Windows.Forms.ListBox ListState;
+        private System.Windows.Forms.Button AddState;
         private System.Windows.Forms.Button DeleteDistrict;
         private System.Windows.Forms.TextBox InputDistrict;
         private System.Windows.Forms.ListBox ListDistrict;
