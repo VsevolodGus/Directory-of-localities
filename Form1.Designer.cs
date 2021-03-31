@@ -41,10 +41,10 @@ namespace Справочник
             this.InputDistrict = new System.Windows.Forms.TextBox();
             this.ListDistrict = new System.Windows.Forms.ListBox();
             this.AddDistrict = new System.Windows.Forms.Button();
-            this.DeleteSettlement = new System.Windows.Forms.Button();
-            this.InputSettlement = new System.Windows.Forms.TextBox();
-            this.ListSettlement = new System.Windows.Forms.ListBox();
-            this.AddSettlement = new System.Windows.Forms.Button();
+            this.DeleteTown = new System.Windows.Forms.Button();
+            this.InputTown = new System.Windows.Forms.TextBox();
+            this.ListTown = new System.Windows.Forms.ListBox();
+            this.AddTown = new System.Windows.Forms.Button();
             this.Choice_Type = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +65,6 @@ namespace Справочник
             // 
             // ListCountry
             // 
-            this.ListCountry.DisplayMember = "Title";
             this.ListCountry.FormattingEnabled = true;
             this.ListCountry.ItemHeight = 16;
             this.ListCountry.Location = new System.Drawing.Point(29, 68);
@@ -73,8 +72,7 @@ namespace Справочник
             this.ListCountry.Name = "ListCountry";
             this.ListCountry.Size = new System.Drawing.Size(229, 420);
             this.ListCountry.TabIndex = 2;
-            this.ListCountry.Tag = "dfafas";
-            this.ListCountry.ValueMember = "Id";
+            this.ListCountry.Tag = "";
             // 
             // InputCountry
             // 
@@ -104,6 +102,7 @@ namespace Справочник
             this.DeleteState.TabIndex = 9;
             this.DeleteState.Text = "Удалить";
             this.DeleteState.UseVisualStyleBackColor = true;
+            this.DeleteState.Click += new System.EventHandler(this.DeleteState_Click);
             // 
             // InputState
             // 
@@ -145,6 +144,7 @@ namespace Справочник
             this.DeleteDistrict.TabIndex = 13;
             this.DeleteDistrict.Text = "Удалить";
             this.DeleteDistrict.UseVisualStyleBackColor = true;
+            this.DeleteDistrict.Click += new System.EventHandler(this.DeleteDistrict_Click);
             // 
             // InputDistrict
             // 
@@ -177,46 +177,47 @@ namespace Справочник
             this.AddDistrict.UseVisualStyleBackColor = true;
             this.AddDistrict.Click += new System.EventHandler(this.AddDistrict_Click);
             // 
-            // DeleteSettlement
+            // DeleteTown
             // 
-            this.DeleteSettlement.Location = new System.Drawing.Point(1053, 527);
-            this.DeleteSettlement.Margin = new System.Windows.Forms.Padding(4);
-            this.DeleteSettlement.Name = "DeleteSettlement";
-            this.DeleteSettlement.Size = new System.Drawing.Size(105, 37);
-            this.DeleteSettlement.TabIndex = 17;
-            this.DeleteSettlement.Text = "Удалить";
-            this.DeleteSettlement.UseVisualStyleBackColor = true;
+            this.DeleteTown.Location = new System.Drawing.Point(1053, 527);
+            this.DeleteTown.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteTown.Name = "DeleteTown";
+            this.DeleteTown.Size = new System.Drawing.Size(105, 37);
+            this.DeleteTown.TabIndex = 17;
+            this.DeleteTown.Text = "Удалить";
+            this.DeleteTown.UseVisualStyleBackColor = true;
+            this.DeleteTown.Click += new System.EventHandler(this.DeleteTown_Click);
             // 
-            // InputSettlement
+            // InputTown
             // 
-            this.InputSettlement.Location = new System.Drawing.Point(941, 495);
-            this.InputSettlement.Margin = new System.Windows.Forms.Padding(4);
-            this.InputSettlement.Name = "InputSettlement";
-            this.InputSettlement.Size = new System.Drawing.Size(216, 22);
-            this.InputSettlement.TabIndex = 16;
+            this.InputTown.Location = new System.Drawing.Point(941, 495);
+            this.InputTown.Margin = new System.Windows.Forms.Padding(4);
+            this.InputTown.Name = "InputTown";
+            this.InputTown.Size = new System.Drawing.Size(216, 22);
+            this.InputTown.TabIndex = 16;
             // 
-            // ListSettlement
+            // ListTown
             // 
-            this.ListSettlement.DisplayMember = "Title";
-            this.ListSettlement.FormattingEnabled = true;
-            this.ListSettlement.ItemHeight = 16;
-            this.ListSettlement.Location = new System.Drawing.Point(831, 68);
-            this.ListSettlement.Margin = new System.Windows.Forms.Padding(4);
-            this.ListSettlement.Name = "ListSettlement";
-            this.ListSettlement.Size = new System.Drawing.Size(327, 420);
-            this.ListSettlement.TabIndex = 15;
-            this.ListSettlement.ValueMember = "Title";
+            this.ListTown.DisplayMember = "Title";
+            this.ListTown.FormattingEnabled = true;
+            this.ListTown.ItemHeight = 16;
+            this.ListTown.Location = new System.Drawing.Point(831, 68);
+            this.ListTown.Margin = new System.Windows.Forms.Padding(4);
+            this.ListTown.Name = "ListTown";
+            this.ListTown.Size = new System.Drawing.Size(327, 420);
+            this.ListTown.TabIndex = 15;
+            this.ListTown.ValueMember = "Title";
             // 
-            // AddSettlement
+            // AddTown
             // 
-            this.AddSettlement.Location = new System.Drawing.Point(831, 527);
-            this.AddSettlement.Margin = new System.Windows.Forms.Padding(4);
-            this.AddSettlement.Name = "AddSettlement";
-            this.AddSettlement.Size = new System.Drawing.Size(105, 37);
-            this.AddSettlement.TabIndex = 14;
-            this.AddSettlement.Text = "Добавить";
-            this.AddSettlement.UseVisualStyleBackColor = true;
-            this.AddSettlement.Click += new System.EventHandler(this.AddSettlement_Click);
+            this.AddTown.Location = new System.Drawing.Point(831, 527);
+            this.AddTown.Margin = new System.Windows.Forms.Padding(4);
+            this.AddTown.Name = "AddTown";
+            this.AddTown.Size = new System.Drawing.Size(105, 37);
+            this.AddTown.TabIndex = 14;
+            this.AddTown.Text = "Добавить";
+            this.AddTown.UseVisualStyleBackColor = true;
+            this.AddTown.Click += new System.EventHandler(this.AddSettlement_Click);
             // 
             // Choice_Type
             // 
@@ -288,10 +289,10 @@ namespace Справочник
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Choice_Type);
-            this.Controls.Add(this.DeleteSettlement);
-            this.Controls.Add(this.InputSettlement);
-            this.Controls.Add(this.ListSettlement);
-            this.Controls.Add(this.AddSettlement);
+            this.Controls.Add(this.DeleteTown);
+            this.Controls.Add(this.InputTown);
+            this.Controls.Add(this.ListTown);
+            this.Controls.Add(this.AddTown);
             this.Controls.Add(this.DeleteDistrict);
             this.Controls.Add(this.InputDistrict);
             this.Controls.Add(this.ListDistrict);
@@ -327,10 +328,10 @@ namespace Справочник
         private System.Windows.Forms.TextBox InputDistrict;
         private System.Windows.Forms.ListBox ListDistrict;
         private System.Windows.Forms.Button AddDistrict;
-        private System.Windows.Forms.Button DeleteSettlement;
-        private System.Windows.Forms.TextBox InputSettlement;
-        private System.Windows.Forms.ListBox ListSettlement;
-        private System.Windows.Forms.Button AddSettlement;
+        private System.Windows.Forms.Button DeleteTown;
+        private System.Windows.Forms.TextBox InputTown;
+        private System.Windows.Forms.ListBox ListTown;
+        private System.Windows.Forms.Button AddTown;
         private System.Windows.Forms.ComboBox Choice_Type;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
