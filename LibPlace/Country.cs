@@ -46,9 +46,9 @@ namespace LibPlace
             command.ExecuteNonQuery();
         }
 
-        public static List<string> LoadList(string Column, SqlConnection DB)
+        public static List<string> LoadList(SqlConnection DB)
         {
-            SqlCommand command = new SqlCommand($"SELECT * FROM {Column}", DB);
+            SqlCommand command = new SqlCommand($"SELECT * FROM Country", DB);
             //command.Parameters.AddWithValue("Column", Column);    
 
             List<string> list = new List<string>();

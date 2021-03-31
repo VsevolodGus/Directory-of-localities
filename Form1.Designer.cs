@@ -73,6 +73,7 @@ namespace Справочник
             this.ListCountry.Size = new System.Drawing.Size(229, 420);
             this.ListCountry.TabIndex = 2;
             this.ListCountry.Tag = "";
+            this.ListCountry.SelectedValueChanged += new System.EventHandler(this.ListCountry_SelectedValueChanged);
             // 
             // InputCountry
             // 
@@ -81,6 +82,7 @@ namespace Справочник
             this.InputCountry.Name = "InputCountry";
             this.InputCountry.Size = new System.Drawing.Size(201, 22);
             this.InputCountry.TabIndex = 4;
+            this.InputCountry.TextChanged += new System.EventHandler(this.InputCountry_TextChanged);
             // 
             // DeleteCountry
             // 
@@ -111,6 +113,7 @@ namespace Справочник
             this.InputState.Name = "InputState";
             this.InputState.Size = new System.Drawing.Size(201, 22);
             this.InputState.TabIndex = 8;
+            this.InputState.TextChanged += new System.EventHandler(this.InputState_TextChanged);
             // 
             // ListState
             // 
@@ -123,6 +126,7 @@ namespace Справочник
             this.ListState.Size = new System.Drawing.Size(229, 420);
             this.ListState.TabIndex = 7;
             this.ListState.ValueMember = "Title";
+            this.ListState.SelectedValueChanged += new System.EventHandler(this.ListState_SelectedValueChanged);
             // 
             // AddState
             // 
@@ -153,6 +157,7 @@ namespace Справочник
             this.InputDistrict.Name = "InputDistrict";
             this.InputDistrict.Size = new System.Drawing.Size(201, 22);
             this.InputDistrict.TabIndex = 12;
+            this.InputDistrict.TextChanged += new System.EventHandler(this.InputDistrict_TextChanged);
             // 
             // ListDistrict
             // 
@@ -165,6 +170,7 @@ namespace Справочник
             this.ListDistrict.Size = new System.Drawing.Size(229, 420);
             this.ListDistrict.TabIndex = 11;
             this.ListDistrict.ValueMember = "Title";
+            this.ListDistrict.SelectedValueChanged += new System.EventHandler(this.ListDistrict_SelectedValueChanged);
             // 
             // AddDistrict
             // 
@@ -195,6 +201,7 @@ namespace Справочник
             this.InputTown.Name = "InputTown";
             this.InputTown.Size = new System.Drawing.Size(216, 22);
             this.InputTown.TabIndex = 16;
+            this.InputTown.TextChanged += new System.EventHandler(this.InputTown_TextChanged);
             // 
             // ListTown
             // 
@@ -234,6 +241,7 @@ namespace Справочник
             this.Choice_Type.Name = "Choice_Type";
             this.Choice_Type.Size = new System.Drawing.Size(75, 24);
             this.Choice_Type.TabIndex = 18;
+            this.Choice_Type.TextChanged += new System.EventHandler(this.Choice_Type_TextChanged);
             // 
             // label1
             // 
